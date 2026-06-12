@@ -1,0 +1,28 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner get = new Scanner(System.in);
+        // Initialization
+        int odd_index_sum = 0;
+        int even_index_sum = 0;
+        System.out.print("Array Size: ");
+        int array_size = get.nextInt();
+        int array[] = new int[array_size];
+        
+        // Inputting the array elements
+        System.out.print("Array elements: ");
+        for(int i=0;i<array_size;i++)
+            array[i]=get.nextInt();
+        
+        // Calculating even index and odd index sum   
+        for(int i=0;i<array_size;i++)
+            if(i%2==0)
+                even_index_sum += array[i];
+            else
+                odd_index_sum += array[i];
+    
+        // Calculating the difference between even index and odd index sum
+        int difference = even_index_sum - odd_index_sum;
+        System.out.println("Difference is : "+difference);
+    }
+}
