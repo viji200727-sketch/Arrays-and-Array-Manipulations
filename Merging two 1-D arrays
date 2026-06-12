@@ -1,0 +1,53 @@
+import java.util.*;
+class Merge {
+    public static void main(String[] args) {
+        Scanner get = new Scanner(System.in);
+        
+        // Initialization of array
+        System.out.print("Enter array1 size: ");
+        int array1_size = get.nextInt();
+        System.out.print("Enter array1 size: ");
+        int array2_size = get.nextInt();
+        int[] array1 = new int[array1_size];
+        int[] array2 = new int[array2_size];
+        
+        // Inputting array elements
+        System.out.print("Enter array1 elements: ");
+        for(int i=0;i<array1_size;i++)
+            array1[i]=get.nextInt();
+        System.out.print("Enter array2 elements: ");
+        for(int i=0;i<array2_size;i++)
+            array2[i]=get.nextInt();
+        
+        
+        // Displaying the array
+        System.out.print("Array1 Elements are: ");
+        for (int i=0;i<array1_size;i++)
+            System.out.print(array1[i] + " ");
+        System.out.println();
+        System.out.print("Array2 Elements are: ");
+        for (int i=0;i<array2_size;i++)
+            System.out.print(array2[i] + " ");
+        System.out.println();
+        
+        // Initializing merge array
+        int tot_size = array1_size + array2_size;
+        int[] merged_array = new int[tot_size];
+        
+        // Merging the Arrays
+        for(int i=0;i<array1_size;i++)
+            merged_array[i] = array1[i];
+        int ind = array1_size;
+        for(int i=0;i<array2_size;i++)
+        {
+            merged_array[ind] = array2[i];
+            ind++;
+        }
+        
+        // Displaying the merged array
+        System.out.print("The merged array is: ");
+        for (int i=0;i<tot_size;i++)
+            System.out.print(merged_array[i] + " ");
+        System.out.println();
+    }
+} 
